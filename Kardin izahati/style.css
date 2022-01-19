@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.card {
+    margin: 100px auto;
+    width: 300px;
+    height: 300px;
+    perspective: 800px;
+    position: relative;
+}
+.card:hover .front {
+    transform: rotateY(180deg);
+}
+.card:hover .back {
+    transform: rotateY(0deg);
+}
+.front {
+    background-color: darkgreen;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all 3s ease;
+}
+.back {
+    background-color: darkkhaki;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: all 3s ease;
+}
+/* 1. back-a y oxu uzre -180 derece rotate verilmesi.
+   2. hem front-a,hem de back-a backface-visibility:hidden verilmesi.
+   3. card-a hover etdikde frontun y oxu uzre 180 derece firlanmasi,back-in y oxu uzre 0 derece firlanmasi.
+   4. front ve back-a transitionlarin verilmesi.
+   5. card-a position:relative,front ve back-a position:absolute verilmesi.
+   6. ve sonda card-a perspective:1000px verilmesi. (Qeyd:perspective ne qeder yuksekdirse,bir o qeder yaxsidir.Eks hal pisdir.) */
+
+.card-2 {
+    margin: 100px auto;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.card-2:hover .front2 {
+    transform: rotateY(0);
+    transition: all 3s ease;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -ms-transition: all 3s ease;
+    -o-transition: all 3s ease;
+}
+.card-2:hover .back2 {
+    transform: rotateY(-180deg);
+    transition: all 3s ease;
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -ms-transition: all 3s ease;
+    -o-transition: all 3s ease;
+}
+.front2 {
+    background-color: darkgreen;
+    width: 300px;
+    height: 300px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    position: absolute;
+}
+.back2 {
+    background-color: darkkhaki;
+    width: 300px;
+    height: 300px;
+    backface-visibility: hidden;
+    position: absolute;
+}
